@@ -359,13 +359,13 @@ for start_point_1 in starting_points:
 
 number_of_points = len(cost_matrix)
 
-number_of_solutions = 2000
-le = 100
-lb = 200
-ne = 50
-nb = 70
-lt = 100
-i_max = 1000000
+number_of_solutions = 100
+le = 10
+lb = 20
+ne = 20
+nb = 30
+lt = 20
+i_max = 100000
 
 solutions = []
 solutions_scores = []
@@ -399,13 +399,13 @@ def generate_random_solution(number_of_points, starting_points, all_paths):
 # print(generate_random_solution(number_of_points, starting_points, all_paths))
 
 
-def eval_solution(path, all_paths_no_dupes=[]):
+def eval_solution(path, all_paths_no_dupes=[],cost_matrix = [], print_stats= False):
     time_multiplier = 1
     missed_path_multiplier = 1000
-    out_of_bounds_multiplier = 10000
+    out_of_bounds_multiplier = 100000
 
     if len(all_paths_no_dupes) == 0:
-        (path,all_path_no_dupes) = path
+        (path,all_paths_no_dupes,cost_matrix) = path
 
     fitness = 0
   #. print(path)
@@ -419,16 +419,21 @@ def eval_solution(path, all_paths_no_dupes=[]):
 
     # print(all_paths)
 
-    temp = repr(path)
-
     number_of_missed_paths = 0
+    temp = repr(path)
+    # if(print_stats):
+    #     print(fitness, missed_path_multiplier, number_of_missed_paths)
     for a, b in all_paths_no_dupes:
         # print(path)
         # print(a, b, repr(path).count(f"{a}, {b}"), repr(path).count(f"{b}, {a}"))
+        
         if (temp.count(f"{a}, {b}") == 0 and temp.count(f"{b}, {a}") == 0):
             number_of_missed_paths += 1
 
     fitness += missed_path_multiplier*number_of_missed_paths
+
+    # if(print_stats):
+    #     print(fitness, missed_path_multiplier, number_of_missed_paths)
 
     # kara za wyjście poza szlak
     number_of_oob_paths = 0
@@ -437,13 +442,21 @@ def eval_solution(path, all_paths_no_dupes=[]):
             number_of_oob_paths += 1
 
     fitness += out_of_bounds_multiplier*number_of_oob_paths
-
+    # if(print_stats):
+    #     print(fitness,out_of_bounds_multiplier,number_of_oob_paths)
+    if(print_stats):
+        print("fitness",fitness - missed_path_multiplier*number_of_missed_paths - out_of_bounds_multiplier*number_of_oob_paths,number_of_oob_paths,number_of_missed_paths)
+    # if(print_stats):
+    #     print(fitness)
+    if(fitness == 0):
+        print("kuuurwaASDFASDF00000", path)
     return fitness
 
 # print(eval_solution([0,1,2,3,4]))
 
 
-print(eval_solution([0, 1, 2, 3, 4, 2, 3, 1], all_paths_no_dupes))
+print(eval_solution([5, 10, 5, 4, 76], all_paths_no_dupes,cost_matrix))
+# throw 
 
 
 def generate_neighbour(args_tuple):
@@ -451,7 +464,11 @@ def generate_neighbour(args_tuple):
     new_neighbour = []
     inters = 0
     while (len(new_neighbour) == 0):
+        (path, number_of_points, cost_matrix, starting_points, all_paths) = args_tuple
         rand = random.randint(0, 2)
+        if(len(all_paths)<len(path)):
+            rand = 1
+
         # position = random.randint(0, len(path)-1)
         # position2 = random.randint(0, len(path)-1)
         # new_value = random.randint(0, number_of_points-1)
@@ -522,7 +539,7 @@ def generate_neighbour(args_tuple):
                 continue
             end_index = start_index+1
             if (end_index >= len(path)):
-                break
+                continue
             while end_index < len(path):
                 if path[end_index] in starting_points:
                     break
@@ -554,7 +571,7 @@ def generate_neighbour(args_tuple):
 for i in range(number_of_solutions):
     temp_solution = generate_random_solution(number_of_points, starting_points, all_paths)
     solutions.append(temp_solution)
-    solutions_scores.append(eval_solution(temp_solution, all_paths_no_dupes))
+    solutions_scores.append(eval_solution(temp_solution, all_paths_no_dupes,cost_matrix))
     solutions_alive_time.append(0)
 
 solutions_scores, solutions, solutions_alive_time = map(list, zip(*sorted(zip(solutions_scores, solutions, solutions_alive_time), key=itemgetter(0))))
@@ -612,19 +629,29 @@ while (iterations < i_max):
         scores_time = time.time()
         neighbourhood_scores = []
 
-        # print(*zip(neighbourhood, [all_paths_no_dupes]*len(neighbourhood)))
+        # print(all_paths_no_dupes)
+        # print([all_paths_no_dupes]*len(neighbourhood))
+        # print(list(zip(neighbourhood, [all_paths_no_dupes]*len(neighbourhood))))
+        temp = []
+        for n in neighbourhood:
+            temp.append((n,all_paths_no_dupes,cost_matrix))
 
-        p=mp.Pool(nb)
-        new_neighbours_scores = p.map(eval_solution, zip(neighbourhood, [all_paths_no_dupes]*len(neighbourhood)))
+        p=mp.Pool(len(neighbourhood))
+        new_neighbours_scores = p.map(eval_solution, temp)
         p.close()
         p.join()
+    
+        # print(new_neighbours_scores)
+        # print(neighbourhood)
 
         for neighbour in new_neighbours_scores:
+            if(neighbour == 0):
+                throw
+                print("SSSDFDASDFASDFASDFKAJSDKL")
             neighbourhood_scores.append(neighbour)
-        print("scores time", time.time()-scores_time)
+        # print("scores time", time.time()-scores_time)
         # print(neighbourhood_scores, neighbourhood)
-        neighbourhood_scores, neighbourhood = [list(x) for x in zip(*sorted(zip(neighbourhood_scores, neighbourhood), key=itemgetter(0)))]
-      #. print(neighbourhood_scores)
+        neighbourhood_scores, neighbourhood = map(list, zip(*sorted(zip(neighbourhood_scores, neighbourhood), key=itemgetter(0))))
         best_neighbours.append(neighbourhood[0])
         best_neighbours_scores.append(neighbourhood_scores[0])
     # print("asdfasdf")
@@ -633,11 +660,15 @@ while (iterations < i_max):
     deleted_amount = 0
 
     for i, current_neighbourhood in enumerate(best_neighbours):
-        if (solutions_scores[i] < best_neighbours_scores[i]):
-            solutions.append(best_neighbours[i])
-            solutions_scores.append(best_neighbours_scores[i])
-            solutions_alive_time.append(0)
-            deleted_amount -= 1
+        if (solutions_scores[i] > best_neighbours_scores[i]):
+            solutions[i]=best_neighbours[i]
+            solutions_scores[i]=best_neighbours_scores[i]
+            solutions_alive_time[i] = 0
+            # print(best_neighbours[i],best_neighbours_scores[i])
+            # solutions.append(best_neighbours[i])
+            # solutions_scores.append(best_neighbours_scores[i])
+            # solutions_alive_time.append(0)
+            # deleted_amount -= 1
     for i, solution in enumerate(solutions):
         solutions_alive_time[i] += 1
         if (solutions_alive_time[i] > lt):
@@ -648,14 +679,16 @@ while (iterations < i_max):
             iterations += 1
     if deleted_amount > 0:
         for i in range(deleted_amount):
-            solutions.append(generate_random_solution(number_of_points, starting_points, all_paths))
-            solutions_scores.append(eval_solution(solutions[i], all_paths_no_dupes))
+            temp = generate_random_solution(number_of_points, starting_points, all_paths)
+            solutions.append(temp)
+            solutions_scores.append(eval_solution((temp, all_paths_no_dupes,cost_matrix)))
             solutions_alive_time.append(0)
     print("dupa2")
     solutions_scores, solutions, solutions_alive_time = map(list, zip(*sorted(zip(solutions_scores, solutions, solutions_alive_time), key=itemgetter(0))))
     print(solutions_scores[0])
-    # print(solutions)
+    print(solutions[0])
     # print("asdf")
+    eval_solution(solutions[0], all_paths_no_dupes,cost_matrix,True)
     if (best_solution_score > solutions_scores[0]):
         best_solution = solutions[0]
         best_solution_score = solutions_scores[0]
