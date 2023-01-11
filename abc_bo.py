@@ -6,7 +6,7 @@ import multiprocessing.dummy as mp
 import time
 
 
-cost_matrix = np.array([[ inf,  inf,  inf,  inf,  inf,  inf,  inf,   5,  inf,  30,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf],
+main_cost_matrix = np.array([[ inf,  inf,  inf,  inf,  inf,  inf,  inf,   5,  inf,  30,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf],
  [ inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,   5,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  20,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf],
  [ inf,  inf,  inf,  inf,  inf,  inf,  inf,  90,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  70,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf],
  [ inf,  inf,  inf,  inf,  inf,  inf,  50,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf],
@@ -343,36 +343,13 @@ cost_matrix = np.array([[ inf,  inf,  inf,  inf,  inf,  inf,  inf,   5,  inf,  3
  [ inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  95,  inf,  inf,  inf,  inf,  inf,  inf,   2,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf],
  [ inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf, 125,  inf,  inf,  inf,  inf,  65,  inf,  inf,  inf,   5,  inf,  inf]])
 
-for i, line in enumerate(cost_matrix):
-    pass
+# for i, line in enumerate(cost_matrix):
+#     pass
 
-all_paths = np.ma.masked_invalid(cost_matrix).nonzero()
-all_paths = list(zip(*all_paths))  # transpose
-all_paths_no_dupes = list({*map(tuple, map(sorted, all_paths))})  # remove duplicates
 
-starting_points = [4, 5, 11, 23, 47, 50, 72, 76, 81, 92, 102, 115, 124, 144, 150, 162, 173, 175, 177, 188, 200, 207, 245, 247, 286, 312, 317, 319, 329, 332, 333]
-for start_point_1 in starting_points:
-    for start_point_2 in starting_points:
-        if (start_point_1 != start_point_2):
-            cost_matrix[start_point_1][start_point_2] = 0
-            cost_matrix[start_point_2][start_point_1] = 0
 
-number_of_points = len(cost_matrix)
-
-number_of_solutions = 2000
-le = 100
-lb = 200
-ne = 50
-nb = 70
-lt = 100
-i_max = 1000000
-
-solutions = []
-solutions_scores = []
-solutions_alive_time = []
-
-print(all_paths)
-print(all_paths_no_dupes)
+# print(all_paths)
+# print(all_paths_no_dupes)
 
 
 def generate_random_solution(number_of_points, starting_points, all_paths):
@@ -400,6 +377,7 @@ def generate_random_solution(number_of_points, starting_points, all_paths):
 
 
 def eval_solution(path, all_paths_no_dupes=[]):
+    cost_matrix = main_cost_matrix.copy()
     time_multiplier = 1
     missed_path_multiplier = 1000
     out_of_bounds_multiplier = 10000
@@ -443,7 +421,7 @@ def eval_solution(path, all_paths_no_dupes=[]):
 # print(eval_solution([0,1,2,3,4]))
 
 
-print(eval_solution([0, 1, 2, 3, 4, 2, 3, 1], all_paths_no_dupes))
+# print(eval_solution([0, 1, 2, 3, 4, 2, 3, 1], all_paths_no_dupes))
 
 
 def generate_neighbour(args_tuple):
@@ -550,116 +528,140 @@ def generate_neighbour(args_tuple):
     # print("done!")
     return new_neighbour
 
+starting_points = [4, 5, 11, 23, 47, 50, 72, 76, 81, 92, 102, 115, 124, 144, 150, 162, 173, 175, 177, 188, 200, 207, 245, 247, 286, 312, 317, 319, 329, 332, 333]
 
-for i in range(number_of_solutions):
-    temp_solution = generate_random_solution(number_of_points, starting_points, all_paths)
-    solutions.append(temp_solution)
-    solutions_scores.append(eval_solution(temp_solution, all_paths_no_dupes))
-    solutions_alive_time.append(0)
+def bees_algorithm(number_of_solutions, le, lb, ne, nb, lt, i_max):
+    cost_matrix = main_cost_matrix.copy()
+    all_paths = np.ma.masked_invalid(cost_matrix).nonzero()
+    all_paths = list(zip(*all_paths))  # transpose
+    all_paths_no_dupes = list({*map(tuple, map(sorted, all_paths))})# remove duplicates
 
-solutions_scores, solutions, solutions_alive_time = map(list, zip(*sorted(zip(solutions_scores, solutions, solutions_alive_time), key=itemgetter(0))))
 
-print(solutions_scores)
-print(solutions)
 
-best_solution = solutions[0]
-best_solution_score = solutions_scores[0]
+    for start_point_1 in starting_points:
+        for start_point_2 in starting_points:
+            if start_point_1 != start_point_2:
+                cost_matrix[start_point_1][start_point_2] = 0
+                cost_matrix[start_point_2][start_point_1] = 0
 
-iterations = 0
-start_time = time.time()
+    number_of_points = len(cost_matrix)
 
-while (iterations < i_max):
+    # number_of_solutions = 2000
+    # le = 100
+    # lb = 200
+    # ne = 50
+    # nb = 70
+    # lt = 100
+    # i_max = 1000
 
-    best_neighbours = []
-    best_neighbours_scores = []
-  #. print("asdf")
-  #. print(solutions)
-    for i, current_solution in enumerate(solutions):
-        neighbourhood = []
-        # print("start",time.time()-start_time)
-        if (i < le):
-            p=mp.Pool(ne)
-            # print(time.time()-start_time)
-            new_neighbours = p.map(generate_neighbour, [(current_solution, number_of_points, cost_matrix, starting_points, all_paths)]*ne)
-            # print(time.time()-start_time)
-            p.close()
-            p.join()
-            
-            for j in range(ne):
-                neighbourhood.append(new_neighbours[j])
-                iterations += 1
-            # print(time.time()-start_time)
-            
-        elif (i < lb):
+    solutions = []
+    solutions_scores = []
+    solutions_alive_time = []
+    for i in range(number_of_solutions):
+        temp_solution = generate_random_solution(number_of_points, starting_points, all_paths)
+        solutions.append(temp_solution)
+        solutions_scores.append(eval_solution(temp_solution, all_paths_no_dupes))
+        solutions_alive_time.append(0)
+
+    solutions_scores, solutions, solutions_alive_time = map(list, zip(*sorted(zip(solutions_scores, solutions, solutions_alive_time), key=itemgetter(0))))
+
+    # print(solutions_scores)
+    # print(solutions)
+
+    best_solution = solutions[0]
+    best_solution_score = solutions_scores[0]
+
+    iterations = 0
+    start_time = time.time()
+
+    while (iterations < i_max):
+
+        best_neighbours = []
+        best_neighbours_scores = []
+      #. print("asdf")
+      #. print(solutions)
+        for i, current_solution in enumerate(solutions):
+            neighbourhood = []
+            # print("start",time.time()-start_time)
+            if i < le:
+                p=mp.Pool(ne)
+                # print(time.time()-start_time)
+                new_neighbours = p.map(generate_neighbour, [(current_solution, number_of_points, cost_matrix, starting_points, all_paths)]*ne)
+                # print(time.time()-start_time)
+                p.close()
+                p.join()
+
+                for j in range(ne):
+                    neighbourhood.append(new_neighbours[j])
+                    iterations += 1
+                # print(time.time()-start_time)
+
+            elif (i < lb):
+
+                p=mp.Pool(nb)
+                # print(time.time()-start_time)
+                new_neighbours = p.map(generate_neighbour, [(current_solution, number_of_points, cost_matrix, starting_points, all_paths)]*nb)
+                # print(time.time()-start_time)
+                p.close()
+                p.join()
+
+                for j in range(nb):
+                    neighbourhood.append(new_neighbours[j])
+                    iterations += 1
+
+                # for j in range(nb):
+                #     iterations += 1
+                #     neighbourhood.append(generate_neighbour(current_solution, number_of_points, cost_matrix, starting_points, all_paths))
+            else:
+                break
+            # print("after neighbours", time.time()-start_time)
+            scores_time = time.time()
+            neighbourhood_scores = []
+
+            # print(*zip(neighbourhood, [all_paths_no_dupes]*len(neighbourhood)))
 
             p=mp.Pool(nb)
-            # print(time.time()-start_time)
-            new_neighbours = p.map(generate_neighbour, [(current_solution, number_of_points, cost_matrix, starting_points, all_paths)]*nb)
-            # print(time.time()-start_time)
+            new_neighbours_scores = p.map(eval_solution, zip(neighbourhood, [all_paths_no_dupes]*len(neighbourhood)))
             p.close()
             p.join()
-            
-            for j in range(nb):
-                neighbourhood.append(new_neighbours[j])
+
+            for neighbour in new_neighbours_scores:
+                neighbourhood_scores.append(neighbour)
+            neighbourhood_scores, neighbourhood = [list(x) for x in zip(*sorted(zip(neighbourhood_scores, neighbourhood), key=itemgetter(0)))]
+
+            best_neighbours.append(neighbourhood[0])
+            best_neighbours_scores.append(neighbourhood_scores[0])
+
+
+        deleted_amount = 0
+
+        for i, current_neighbourhood in enumerate(best_neighbours):
+            if (solutions_scores[i] < best_neighbours_scores[i]):
+                solutions.append(best_neighbours[i])
+                solutions_scores.append(best_neighbours_scores[i])
+                solutions_alive_time.append(0)
+                deleted_amount -= 1
+        for i, solution in enumerate(solutions):
+            solutions_alive_time[i] += 1
+            if (solutions_alive_time[i] > lt):
+                solutions.pop(i)
+                solutions_alive_time.pop(i)
+                solutions_scores.pop(i)
+                deleted_amount += 1
                 iterations += 1
+        if deleted_amount > 0:
+            for i in range(deleted_amount):
+                solutions.append(generate_random_solution(number_of_points, starting_points, all_paths))
+                solutions_scores.append(eval_solution(solutions[i], all_paths_no_dupes))
+                solutions_alive_time.append(0)
+        solutions_scores, solutions, solutions_alive_time = map(list, zip(*sorted(zip(solutions_scores, solutions, solutions_alive_time), key=itemgetter(0))))
 
-            # for j in range(nb):
-            #     iterations += 1
-            #     neighbourhood.append(generate_neighbour(current_solution, number_of_points, cost_matrix, starting_points, all_paths))
-        else:
-            break
-        # print("after neighbours", time.time()-start_time)
-        scores_time = time.time()
-        neighbourhood_scores = []
+        if (best_solution_score > solutions_scores[0]):
+            best_solution = solutions[0]
+            best_solution_score = solutions_scores[0]
 
-        # print(*zip(neighbourhood, [all_paths_no_dupes]*len(neighbourhood)))
-
-        p=mp.Pool(nb)
-        new_neighbours_scores = p.map(eval_solution, zip(neighbourhood, [all_paths_no_dupes]*len(neighbourhood)))
-        p.close()
-        p.join()
-
-        for neighbour in new_neighbours_scores:
-            neighbourhood_scores.append(neighbour)
-        print("scores time", time.time()-scores_time)
-        # print(neighbourhood_scores, neighbourhood)
-        neighbourhood_scores, neighbourhood = [list(x) for x in zip(*sorted(zip(neighbourhood_scores, neighbourhood), key=itemgetter(0)))]
-      #. print(neighbourhood_scores)
-        best_neighbours.append(neighbourhood[0])
-        best_neighbours_scores.append(neighbourhood_scores[0])
-    # print("asdfasdf")
-    print("dupa1")
-
-    deleted_amount = 0
-
-    for i, current_neighbourhood in enumerate(best_neighbours):
-        if (solutions_scores[i] < best_neighbours_scores[i]):
-            solutions.append(best_neighbours[i])
-            solutions_scores.append(best_neighbours_scores[i])
-            solutions_alive_time.append(0)
-            deleted_amount -= 1
-    for i, solution in enumerate(solutions):
-        solutions_alive_time[i] += 1
-        if (solutions_alive_time[i] > lt):
-            solutions.pop(i)
-            solutions_alive_time.pop(i)
-            solutions_scores.pop(i)
-            deleted_amount += 1
-            iterations += 1
-    if deleted_amount > 0:
-        for i in range(deleted_amount):
-            solutions.append(generate_random_solution(number_of_points, starting_points, all_paths))
-            solutions_scores.append(eval_solution(solutions[i], all_paths_no_dupes))
-            solutions_alive_time.append(0)
-    print("dupa2")
-    solutions_scores, solutions, solutions_alive_time = map(list, zip(*sorted(zip(solutions_scores, solutions, solutions_alive_time), key=itemgetter(0))))
-    print(solutions_scores[0])
-    # print(solutions)
-    # print("asdf")
-    if (best_solution_score > solutions_scores[0]):
-        best_solution = solutions[0]
-        best_solution_score = solutions_scores[0]
+    return best_solution, best_solution_score, solutions_scores
 
 
-print(best_solution)
-print(best_solution_score)
+
+
