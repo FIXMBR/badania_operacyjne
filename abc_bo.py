@@ -739,8 +739,12 @@ def bees_algorithm(number_of_solutions, le, lb, ne, nb, lt, i_max):
 
             # print(*zip(neighbourhood, [all_paths_no_dupes]*len(neighbourhood)))
 
+            temp = []
+            for n in neighbourhood:
+                temp.append((n,all_paths_no_dupes,cost_matrix,starting_points))
+
             p=mp.Pool(nb)
-            new_neighbours_scores = p.map(eval_solution, zip(neighbourhood, [all_paths_no_dupes]*len(neighbourhood)))
+            new_neighbours_scores = p.map(eval_solution, temp)
             p.close()
             p.join()
 
@@ -752,23 +756,23 @@ def bees_algorithm(number_of_solutions, le, lb, ne, nb, lt, i_max):
             best_neighbours_scores.append(neighbourhood_scores[0])
 
 
-        temp = []
-        for n in neighbourhood:
-            temp.append((n,all_paths_no_dupes,cost_matrix,starting_points))
+        # temp = []
+        # for n in neighbourhood:
+        #     temp.append((n,all_paths_no_dupes,cost_matrix,starting_points))
 
-        p=mp.Pool(len(neighbourhood))
-        new_neighbours_scores = p.map(eval_solution, temp)
-        p.close()
-        p.join()
+        # p=mp.Pool(len(neighbourhood))
+        # new_neighbours_scores = p.map(eval_solution, temp)
+        # p.close()
+        # p.join()
     
 
-        for neighbour in new_neighbours_scores:
-            if(neighbour == 0):
-                throw
-            neighbourhood_scores.append(neighbour)
-        neighbourhood_scores, neighbourhood = map(list, zip(*sorted(zip(neighbourhood_scores, neighbourhood), key=itemgetter(0))))
-        best_neighbours.append(neighbourhood[0])
-        best_neighbours_scores.append(neighbourhood_scores[0])
+        # for neighbour in new_neighbours_scores:
+        #     if(neighbour == 0):
+        #         throw
+        #     neighbourhood_scores.append(neighbour)
+        # neighbourhood_scores, neighbourhood = map(list, zip(*sorted(zip(neighbourhood_scores, neighbourhood), key=itemgetter(0))))
+        # best_neighbours.append(neighbourhood[0])
+        # best_neighbours_scores.append(neighbourhood_scores[0])
 
         deleted_amount = 0
 
