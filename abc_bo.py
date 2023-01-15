@@ -508,6 +508,22 @@ def eval_solution(path, all_paths_no_dupes=[],cost_matrix = [],starting_points=[
 # print(eval_solution([5, 10, 5, 4, 76], all_paths_no_dupes,cost_matrix,starting_points))
 # throw 
 
+        # for n in neighbourhood:
+        #     temp.append((n,all_paths_no_dupes,cost_matrix,starting_points))
+
+        # p=mp.Pool(len(neighbourhood))
+        # new_neighbours_scores = p.map(eval_solution, temp)
+        # p.close()
+        # p.join()
+    
+
+        # for neighbour in new_neighbours_scores:
+        #     if(neighbour == 0):
+        #         throw
+        #     neighbourhood_scores.append(neighbour)
+        # neighbourhood_scores, neighbourhood = map(list, zip(*sorted(zip(neighbourhood_scores, neighbourhood), key=itemgetter(0))))
+        # best_neighbours.append(neighbourhood[0])
+        # best_neighbours_scores.append(neighbourhood_scores[0])
 
 def generate_neighbour(args_tuple):
     (path, number_of_points, cost_matrix, starting_points, all_paths) = args_tuple
@@ -516,8 +532,6 @@ def generate_neighbour(args_tuple):
     while (len(new_neighbour) == 0):
         (path, number_of_points, cost_matrix, starting_points, all_paths) = args_tuple
         rand = random.randint(0, 3)
-        # if(len(all_paths)<len(path)):
-        #     rand = 1
         if(len(all_paths)/2<len(path)):
             rand1 = 0
             rand2 = 1
@@ -540,21 +554,6 @@ def generate_neighbour(args_tuple):
                 rand2 = 0
                 rand3 = 1
 
-
-        # position = random.randint(0, len(path)-1)
-        # position2 = random.randint(0, len(path)-1)
-        # new_value = random.randint(0, number_of_points-1)
-        # if rand == 1:
-        #     path[position] = new_value
-        #     new_neighbour = np.array(path)
-
-        # elif rand == 2:
-        #     path[position], path[position2] = path[position2], path[position]
-        #     new_neighbour = np.array(path)
-        # else:
-        #     for i in range(rand):
-        #         new_neighbour = np.append(path, random.randint(0, number_of_points-1))
-      #. print(path)
         inters+=1
 
         if rand1:
