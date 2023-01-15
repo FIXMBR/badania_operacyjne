@@ -387,8 +387,6 @@ main_cost_matrix = np.array([[ inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  i
  [ inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  95.,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  65.,  inf,  inf,  inf,  inf,   2.,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf],
  [ inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf,  inf, 125.,  inf,  inf,  inf,  inf,  65.,  inf,  inf,  inf,   5.,  inf,  inf,  inf]])
 
-# for i, line in enumerate(cost_matrix):
-#     pass
 
 cost_matrix = main_cost_matrix
 
@@ -413,9 +411,6 @@ solutions = []
 solutions_scores = []
 solutions_alive_time = []
 
-# print(all_paths)
-# print(all_paths_no_dupes)
-
 
 def generate_random_solution(number_of_points, starting_points, all_paths):
     start = random.choice(starting_points)
@@ -432,13 +427,8 @@ def generate_random_solution(number_of_points, starting_points, all_paths):
             current_node = random.choice(junction)[1]
         result.append(current_node)
 
-    # result = list(range(number_of_points))
-    # random.shuffle(result)
-    # return np.array(result)
     return result
 
-
-# print(generate_random_solution(number_of_points, starting_points, all_paths))
 
 
 def eval_solution(path, all_paths_no_dupes=[],cost_matrix = [],starting_points=[], print_stats= False):
@@ -455,7 +445,6 @@ def eval_solution(path, all_paths_no_dupes=[],cost_matrix = [],starting_points=[
 
     fitness = 0
     path_time = 0
-  #. print(path)
     path_fitness = 0
     # czas przejścia
     for i in range(len(path)-1):
@@ -468,25 +457,13 @@ def eval_solution(path, all_paths_no_dupes=[],cost_matrix = [],starting_points=[
         if path_fitness > max_length:
             fitness += (path_fitness-max_length)*over_max_length_multiplier  
     # kara za pominięcie szlaku
-
-    # print(all_paths)
-
     number_of_missed_paths = 0
     temp = repr(path)
-    # if(print_stats):
-    #     print(fitness, missed_path_multiplier, number_of_missed_paths)
     for a, b in all_paths_no_dupes:
-        # print(path)
-        # print(a, b, repr(path).count(f"{a}, {b}"), repr(path).count(f"{b}, {a}"))
-        
         if (temp.count(f"{a}, {b}") == 0 and temp.count(f"{b}, {a}") == 0):
             number_of_missed_paths += 1
 
     fitness += missed_path_multiplier*number_of_missed_paths
-
-    # if(print_stats):
-    #     print(fitness, missed_path_multiplier, number_of_missed_paths)
-
     # kara za wyjście poza szlak
     number_of_oob_paths = 0
     for i in range(len(path)-1):
@@ -494,36 +471,9 @@ def eval_solution(path, all_paths_no_dupes=[],cost_matrix = [],starting_points=[
             number_of_oob_paths += 1
 
     fitness += out_of_bounds_multiplier*number_of_oob_paths
-    # if(print_stats):
-    #     print(fitness,out_of_bounds_multiplier,number_of_oob_paths)
     if(print_stats):
         print("fitness",fitness - missed_path_multiplier*number_of_missed_paths - out_of_bounds_multiplier*number_of_oob_paths,number_of_oob_paths,number_of_missed_paths)
-    # if(print_stats):
-    #     print(fitness)
     return fitness
-
-# print(eval_solution([0,1,2,3,4]))
-
-
-# print(eval_solution([5, 10, 5, 4, 76], all_paths_no_dupes,cost_matrix,starting_points))
-# throw 
-
-        # for n in neighbourhood:
-        #     temp.append((n,all_paths_no_dupes,cost_matrix,starting_points))
-
-        # p=mp.Pool(len(neighbourhood))
-        # new_neighbours_scores = p.map(eval_solution, temp)
-        # p.close()
-        # p.join()
-    
-
-        # for neighbour in new_neighbours_scores:
-        #     if(neighbour == 0):
-        #         throw
-        #     neighbourhood_scores.append(neighbour)
-        # neighbourhood_scores, neighbourhood = map(list, zip(*sorted(zip(neighbourhood_scores, neighbourhood), key=itemgetter(0))))
-        # best_neighbours.append(neighbourhood[0])
-        # best_neighbours_scores.append(neighbourhood_scores[0])
 
 def generate_neighbour(args_tuple):
     (path, number_of_points, cost_matrix, starting_points, all_paths) = args_tuple
@@ -573,11 +523,9 @@ def generate_neighbour(args_tuple):
                         elif (start_index != 0 and end_index == 0):
                             new_neighbour = list(path[:start_index])
                         elif (start_index == 0 and end_index == 0):
-                            # new_neighbour = list(path[:start_index])
                             break
                         else:
                             new_neighbour = list(np.append(list(path[:start_index]), path[end_index:]))
-                        # print(new_neighbour)
                         if(isinstance(new_neighbour[0],float)):
                             new_neighbour=[]
                         break
@@ -640,11 +588,6 @@ def generate_neighbour(args_tuple):
             new_neighbour = list(np.append(np.append(path[:start_index], result), path[end_index:]))
             if(isinstance(new_neighbour[0],float)):
                 new_neighbour=[]
-  #. print(new_neighbour)
-    # print(rand, eval_solution(new_neighbour, all_paths_no_dupes))
-    # print(rand)
-    # print(inters)
-    # print("done!")
     return new_neighbour
 
 starting_points = [4, 5, 11, 23, 47, 50, 72, 76, 81, 92, 102, 115, 124, 144, 150, 162, 173, 175, 177, 188, 200, 207, 245, 247, 286, 312, 317, 319, 329, 332, 333]
@@ -683,9 +626,6 @@ def bees_algorithm(number_of_solutions, le, lb, ne, nb, lt, i_max):
 
     solutions_scores, solutions, solutions_alive_time = map(list, zip(*sorted(zip(solutions_scores, solutions, solutions_alive_time), key=itemgetter(0))))
 
-    # print(solutions_scores)
-    # print(solutions)
-
     best_solution = solutions[0]
     best_solution_score = solutions_scores[0]
 
@@ -696,30 +636,23 @@ def bees_algorithm(number_of_solutions, le, lb, ne, nb, lt, i_max):
 
         best_neighbours = []
         best_neighbours_scores = []
-      #. print("asdf")
-      #. print(solutions)
         for i, current_solution in enumerate(solutions):
             neighbourhood = []
             # print("start",time.time()-start_time)
             if i < le:
                 p=mp.Pool(ne)
-                # print(time.time()-start_time)
                 new_neighbours = p.map(generate_neighbour, [(current_solution, number_of_points, cost_matrix, starting_points, all_paths)]*ne)
-                # print(time.time()-start_time)
                 p.close()
                 p.join()
 
                 for j in range(ne):
                     neighbourhood.append(new_neighbours[j])
                     iterations += 1
-                # print(time.time()-start_time)
 
             elif (i < lb):
 
                 p=mp.Pool(nb)
-                # print(time.time()-start_time)
                 new_neighbours = p.map(generate_neighbour, [(current_solution, number_of_points, cost_matrix, starting_points, all_paths)]*nb)
-                # print(time.time()-start_time)
                 p.close()
                 p.join()
 
@@ -727,16 +660,10 @@ def bees_algorithm(number_of_solutions, le, lb, ne, nb, lt, i_max):
                     neighbourhood.append(new_neighbours[j])
                     iterations += 1
 
-                # for j in range(nb):
-                #     iterations += 1
-                #     neighbourhood.append(generate_neighbour(current_solution, number_of_points, cost_matrix, starting_points, all_paths))
             else:
                 break
-            # print("after neighbours", time.time()-start_time)
             scores_time = time.time()
             neighbourhood_scores = []
-
-            # print(*zip(neighbourhood, [all_paths_no_dupes]*len(neighbourhood)))
 
             temp = []
             for n in neighbourhood:
@@ -753,25 +680,6 @@ def bees_algorithm(number_of_solutions, le, lb, ne, nb, lt, i_max):
 
             best_neighbours.append(neighbourhood[0])
             best_neighbours_scores.append(neighbourhood_scores[0])
-
-
-        # temp = []
-        # for n in neighbourhood:
-        #     temp.append((n,all_paths_no_dupes,cost_matrix,starting_points))
-
-        # p=mp.Pool(len(neighbourhood))
-        # new_neighbours_scores = p.map(eval_solution, temp)
-        # p.close()
-        # p.join()
-    
-
-        # for neighbour in new_neighbours_scores:
-        #     if(neighbour == 0):
-        #         throw
-        #     neighbourhood_scores.append(neighbour)
-        # neighbourhood_scores, neighbourhood = map(list, zip(*sorted(zip(neighbourhood_scores, neighbourhood), key=itemgetter(0))))
-        # best_neighbours.append(neighbourhood[0])
-        # best_neighbours_scores.append(neighbourhood_scores[0])
 
         deleted_amount = 0
 
