@@ -1,1 +1,1 @@
-# badania_kurwa_operacyjne
+# badania_operacyjne
